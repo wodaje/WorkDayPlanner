@@ -50,7 +50,8 @@ textarea{
 
 .past {
   background-color: #d3d3d3;
-  color: white;
+  color: black;
+  font-style: italic;
   border-radius: 15px;
   border-style: inset;
 }
@@ -58,13 +59,14 @@ textarea{
 .present {
   background-color: #ff6961;
   color: white;
+  font-weight: bold;
   border-radius: 15px;
   border-style: inset;
 }
 
 .future {
   background-color: #77dd77;   
-  color: white;
+  color: black;
   border-radius: 15px;
   border-style: inset;
 }
