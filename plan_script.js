@@ -1,7 +1,8 @@
 var hourArray = ["9","10","11","12","13","14","15","16","17"]
 var hourArrayAm = ["9AM","10AM","11AM","12PM","1PM","2PM","3PM","4PM","5PM"]
-//var divElement
 
+
+//updateTime()
 divLoop()
 labelHour()
 textField()
@@ -21,16 +22,30 @@ function divLoop(){
 function labelHour(){
     hourArray.forEach(function(hour,i){
         let labelHour = $(`<t>${hourArrayAm[i]}</t>`)
-        labelHour.addClass("hour")          
+        labelHour.addClass("hour")             
         $(`#d${hour}`).append(labelHour)
     })  
 }
 
 // creating Text Fields
 function textField(){
+
+    let hourNow = updateTime()
+
     hourArray.forEach(function(hour,i){
         let textBlock = $(`<textarea id= 't${hour}'; rows= '1'; cols= '70'>`)
-        textBlock.addClass("time-block")
+     
+
+        if (parseInt(hour) < hourNow) {
+            textBlock.addClass("past")       
+        }
+        else if (parseInt(hour) === hourNow) {
+            textBlock.addClass("present")       
+        }
+        else if (parseInt(hour) > hourNow) {
+            textBlock.addClass("future")       
+        }
+        
         $(`#d${hour}`).append(textBlock)
         
     })
@@ -46,10 +61,13 @@ function createButton(){
     })
 }
 
+function updateTime(){
 
-//Date.now()	Get the time. ECMAScript 5.
-//function myFunction() {
-//    var d = new Date();
-//    var n = d.getHours();
-//    document.getElementById("demo").innerHTML = n;
-//  }
+    var offSet = prompt("Enter Hour offset to test time function")
+    var dateTime = new Date()
+    var hourNow = dateTime.getHours()-parseInt(offSet)
+    return hourNow
+
+}
+
+//$(document).on("click", ".container", alert("SaveBtn Class"));
