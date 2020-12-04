@@ -2,8 +2,10 @@
 var hourArray = ["9","10","11","12","13","14","15","16","17"]
 var hourArrayAm = ["9 AM","10AM","11AM","12PM","1 PM","2 PM","3 PM","4 PM","5 PM"]
 
+
 // Allow for automatic formatting for hourly fields checked every minute
 var timer = setInterval(formatField, 1000)
+
 
 // execute dynamic loading of page
 divLoop()
@@ -13,9 +15,9 @@ createButton()
 formatField()
 fillContent()
 
+
 // creating row divs and load 
 function divLoop(){
-
     hourArray.forEach(function(hour){
       let divElement = $(`<div id='d${hour}'></div>`)
       divElement.addClass("row")
@@ -23,9 +25,9 @@ function divLoop(){
         })    
 }
 
+
 // creating Hour Label
 function labelHour(){
-
     hourArray.forEach(function(hour,i){
         let labelHour = $(`<t>${hourArrayAm[i]}</t>`)
         labelHour.addClass("hour")             
@@ -33,14 +35,15 @@ function labelHour(){
     })  
 }
 
+
 // creating Text Fields
 function textField(){
-
     hourArray.forEach(function(hour){
         let textBlock = $(`<textarea id= 't${hour}'; rows= '2'; cols= '50'>`)   
         $(`#d${hour}`).append(textBlock)
     })
 }
+
 
 // Creating Buttons
 function createButton(){
@@ -52,9 +55,11 @@ function createButton(){
     })
 }
 
-// Grabs time and allows calendar adjusting to test 
-// It will distort current hour by 8 hours if you are outside the window of 9-5
+
+// Controls time window and dynamic format updates 
 function formatField(){
+    
+    // display time fix for continued functionality testing regardless of instructor time window view 
 
     var dateTime = new Date()
     $("#currentDay").html(dateTime)
@@ -65,7 +70,24 @@ function formatField(){
     else if (hourNow < 9) {offSet = -8}
     hourNow = hourNow - offSet 
 
-    hourArray.forEach(function(hour,i){
+    // clears classes first for refresh
+    hourArray.forEach(function(hour){
+       
+        let textBlock = $(`#t${hour}`)
+        
+        if (textBlock.hasClass("past")) {
+            $(textBlock).removeClass("past")
+        }
+        else if (textBlock.hasClass("present")) {
+            $(textBlock).removeClass("present")
+        }
+        else if (textBlock.hasClass("future")) {
+            $(textBlock).removeClass("future")
+        }
+    })
+   
+    // assigns new classes based on time 
+    hourArray.forEach(function(hour){
        
         let textBlock = $(`#t${hour}`)
 
@@ -81,8 +103,10 @@ function formatField(){
     })
 }          
 
+
 // Add event for button functionality
 $(".container").on("click","button", updateBox)
+
 
 //Button control in hourly view for local storage
 function updateBox(){
@@ -94,6 +118,7 @@ function updateBox(){
     localStorage.setItem(`text${idNum}`,textCont)  
 }
 
+// Local storage solution for calendar details
 function fillContent(){
 
     hourArray.forEach(function(hour){
@@ -101,6 +126,9 @@ function fillContent(){
         $(`#t${hour}`).text(textCont)
     })
 }
+
+// this code below is for me to work out with tutor block I ran across 
+
 //var dayEl = $("<input type= 'number'; onchange= 'adjustTime()'>")
 //$("#currentDay").append(dayEl)
 //$("#currentDay").prepend("Select Hours to adjust for testing:")

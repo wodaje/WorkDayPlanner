@@ -10,7 +10,7 @@ Known bugs:
 
 1. Resizing lower then tablet results in display failure at moment can only use down to tablet. Text fields dynamically generated would need to be resized for smaller layout potential - solution unlcear at the moment. 
 2. Display for the life of me of hourly schedule will not center within the div for display, trying multiple options.
-3. For some reason the hour focus on the cycle of rolling past the hour does not automatically reformat the text block moving the active hour = it only works on re-fresh - should work just as is... 
+
 
 Layout Functionality:
 
@@ -18,6 +18,7 @@ Layout Functionality:
 2. Timer function on line 6 updates every second this can be adjusted to fewer cycles if desired. This controls the main formatting of the hourly fields and clock/time display.
 3. Each hourly slot is set in a corresponding div created for that purose with all matching hourly labels, so div9 div10 etc, text field t9, t10 and corresponding button b9, b10 etc.
 4. The save button saves the text to local storage - it does not have a day roll feature so yesterday's menu will be on display once we roll into the new day.
+
 
 Functions:
 
@@ -30,7 +31,7 @@ creates div corresponding with the hour of the hour array and using the hour lab
 4. createButtons():
 creates button array
 5. formatField():
-applies display fix to check functionality outside 9-5, assigns various css classes to display past, present and future hour blocks. ***Known bug is listed under item 3 of it not automaticaly refreshing under the  set interval which is firing the clock update but not the re-formattting loop***
+applies display fix to check functionality outside 9-5, clears class for rolling assignemt feature, assigns various css classes to display past, present and future hour blocks.
 6. updateBox():
 this writes items to local storage when saved teh on line 85 preceeding event listener allows this to fire on any button clicked within the container element class "button"
 7. fillContent():
