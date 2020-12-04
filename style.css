@@ -4,7 +4,8 @@ body {
   line-height: 1;
 }
 
-#container{
+.container{
+  width: 100%;
   margin: auto;
 }
 
@@ -14,7 +15,7 @@ textarea{
   resize: none;
   color: #000000;
   border-left: 1px solid black;
-  padding: 10px;
+  padding: 1px;
 }
 
 .jumbotron {
@@ -65,7 +66,7 @@ textarea{
 }
 
 .future {
-  background-color: #77dd77;   
+   background-color: #77dd77;   
   color: black;
   border-radius: 15px;
   border-style: inset;
