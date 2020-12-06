@@ -6,8 +6,7 @@ body {
 
 .container{
   width: 100%;
-  margin: auto;
-}
+  }
 
 textarea{
   background: transparent;
@@ -36,18 +35,19 @@ textarea{
   
 }
 
-.row {
-  margin: auto;
+ .row {
   white-space: pre-wrap;
   height: 50px;
-  border-top: 1px solid white;
-  }
+  border-top: 2px solid white;
+  margin: auto;
+  } 
 
 .hour {
   background-color: #ffffff;
   color: #000000;
   border-top: 1px dashed #000000;
-}
+  font-size: 18px;
+ }
 
 .past {
   background-color: #d3d3d3;

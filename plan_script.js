@@ -1,17 +1,21 @@
 // Hour Range 
 var hourArray = ["9","10","11","12","13","14","15","16","17"]
-var hourArrayAm = ["9 AM","10AM","11AM","12PM","1 PM","2 PM","3 PM","4 PM","5 PM"]
+var hourArrayAm = [" 9AM ","10AM ","11AM ","12PM "," 1PM "," 2PM "," 3PM "," 4PM "," 5PM "]
 
 
 // Allow for automatic formatting for hourly fields checked every minute
-var timer = setInterval(formatField, 1000)
-
+// and initilzation of variables reuse in functions
+var timer = setInterval(checkTime, 1000)
+var dateTime = new Date()
+var hourNow = dateTime.getHours()
+var oldHour = Number
 
 // execute dynamic loading of page
 divLoop()
 labelHour()
 textField()
 createButton()
+checkTime()
 formatField()
 fillContent()
 
@@ -19,8 +23,8 @@ fillContent()
 // creating row divs and load 
 function divLoop(){
     hourArray.forEach(function(hour){
-      let divElement = $(`<div id='d${hour}'></div>`)
-      divElement.addClass("row")
+        let divElement = $(`<div id='d${hour}'></div>`)
+        divElement.addClass("row")
         $(".container").append(divElement)
         })    
 }
@@ -29,7 +33,7 @@ function divLoop(){
 // creating Hour Label
 function labelHour(){
     hourArray.forEach(function(hour,i){
-        let labelHour = $(`<t>${hourArrayAm[i]}</t>`)
+        let labelHour = $(`<pre>${hourArrayAm[i]}</pre>`)
         labelHour.addClass("hour")             
         $(`#d${hour}`).append(labelHour)
     })  
@@ -39,7 +43,8 @@ function labelHour(){
 // creating Text Fields
 function textField(){
     hourArray.forEach(function(hour){
-        let textBlock = $(`<textarea id= 't${hour}'; rows= '2'; cols= '50'>`)   
+      //  let textBlock = $(`<textarea id= 't${hour}'; rows= '2'; cols= '50'>`)
+      let textBlock = $(`<textarea id='t${hour}'class=' col-xs-4 col-sm-8'>`)   
         $(`#d${hour}`).append(textBlock)
     })
 }
@@ -48,7 +53,7 @@ function textField(){
 // Creating Buttons
 function createButton(){
     hourArray.forEach(function(hour){
-        var btn = $(`<button id= b${hour}>`)
+        var btn = $(`<button id='b${hour}'class=' col-xs-1 col-sm1'>`)
         btn.addClass("saveBtn")
         btn.text("Save")
         $(`#d${hour}`).append(btn)
@@ -59,17 +64,10 @@ function createButton(){
 // Controls time window and dynamic format updates 
 function formatField(){
     
-    // display time fix for continued functionality testing regardless of instructor time window view 
-
-    var dateTime = new Date()
-    $("#currentDay").html(dateTime)
-
-    let offSet = 0
-    let hourNow = dateTime.getHours()
-    if (hourNow > 17){offSet = 8}
-    else if (hourNow < 9) {offSet = -8}
-    hourNow = hourNow - offSet 
-
+    // display time adjsutment for continued functionality testing regardless of instructor time window view     
+     
+    oldHour = hourNow
+      
     // clears classes first for refresh
     hourArray.forEach(function(hour){
        
@@ -126,6 +124,25 @@ function fillContent(){
         $(`#t${hour}`).text(textCont)
     })
 }
+
+// the time adjustment needs to be repated here to keep variable hourNow consistently offset for comparison
+function checkTime(){
+    
+    let dateTime = new Date()
+    $("#currentDay").html(dateTime)
+
+    hourNow = dateTime.getHours()
+    let offSet = 0
+    if (hourNow > 17){offSet = 8}
+    else if (hourNow < 9) {offSet = -8}
+    hourNow = hourNow - offSet 
+    
+    if (oldHour < hourNow){
+        formatField()
+    }
+}
+
+
 
 // this code below is for me to work out with tutor block I ran across 
 
