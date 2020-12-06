@@ -1,6 +1,6 @@
 Known bugs:
 
-1. Columns will not expand to apporpriate size for full descktop application but the centering and mobile responsive dipslay bug has been fixed.
+1. Columns will not expand to wider size for full desktop application but the centering and mobile responsive dipslay bug has been fixed.
 
 
 Project update Jeff Woda 03 Dec 2020 - updated files:
