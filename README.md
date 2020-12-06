@@ -1,9 +1,9 @@
-Project update Jeff Woda 03 Dec 2020 - updated files:
-
 Known bugs:
 
 1. Columns will not expand to apporpriate size for full descktop application but the centering and mobile responsive dipslay bug has been fixed.
 
+
+Project update Jeff Woda 03 Dec 2020 - updated files:
 
 1. JavaScript using Jquery mainly
 2. CSS properties and classes 
