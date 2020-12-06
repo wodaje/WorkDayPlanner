@@ -6,6 +6,7 @@ body {
 
 .container{
   width: 100%;
+  display: grid;
   }
 
 textarea{
@@ -36,17 +37,21 @@ textarea{
 }
 
  .row {
+  display: stretch;
   white-space: pre-wrap;
   height: 50px;
   border-top: 2px solid white;
   margin: auto;
+  font-size: 12px;
   } 
 
 .hour {
+  /*align-items: stretch;*/
+  /*grid-template-columns: .0833%*/
   background-color: #ffffff;
   color: #000000;
   border-top: 1px dashed #000000;
-  font-size: 18px;
+  font-size: 20px;
  }
 
 .past {
@@ -66,13 +71,15 @@ textarea{
 }
 
 .future {
-   background-color: #77dd77;   
+  background-color: #77dd77;   
   color: black;
   border-radius: 15px;
   border-style: inset;
 }
 
 .saveBtn {
+/*  align-items: stretch;*/
+  /*grid-template-columns: .0833%*/
   border-left: 1px solid black;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;

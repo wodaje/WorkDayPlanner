@@ -1,15 +1,15 @@
 Project update Jeff Woda 03 Dec 2020 - updated files:
 
+Known bugs:
+
+1. Columns will not expand to apporpriate size for full descktop application but the centering and mobile responsive dipslay bug has been fixed.
+
+
 1. JavaScript using Jquery mainly
 2. CSS properties and classes 
 
 Functionality Fix:
 1. Lines 68 to 72 check for the hour window and adjust so that one can view the file 24/7 to check for functionality - note the actual time window will only be accurate during a 9-5 viewing - otherwise it has an 8 hour offset to keep the screen changes releveant. (this is repeated now in new function update checkTime)
-
-Known bugs:
-
-1. Resizing lower then tablet results in display failure at moment can only use down to tablet. Text fields dynamically generated would need to be resized for smaller layout potential - solution unlcear at the moment. 
-2. Display for the life of me of hourly schedule will not center within the div for display, trying multiple options.
 
 
 Layout Functionality:
