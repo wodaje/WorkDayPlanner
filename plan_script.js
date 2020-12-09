@@ -42,10 +42,8 @@ function labelHour(){
 
 // creating Text Fields
 function textField(){
-    hourArray.forEach(function(hour){
-    // let textBlock = $(`<textarea id= 't${hour}'; rows= '2'; cols= '50'>`)
-     //  let textBlock = $(`<textarea id='t${hour}'class=' col-xs-4 col-sm-8'>`)   
-       let textBlock = $(`<textarea id='t${hour}'class=' col-xs-2' col-sm-10 col-lg-10>`)
+    hourArray.forEach(function(hour){   
+       let textBlock = $(`<textarea id='t${hour}'class=' col-xs-2'>`)
         $(`#d${hour}`).append(textBlock)
     })
 }
