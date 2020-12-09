@@ -1,9 +1,8 @@
-Upgrade Options:
-
+**Upgrade Options:**
 1. Input field for memos could be made to expand futher for full desktop view.
 
 
-Project update Jeff Woda 03 Dec 2020 - updated files:
+***Project update Jeff Woda 03 Dec 2020 - updated files:***
 
 1. JavaScript using Jquery mainly
 2. CSS properties and classes 
