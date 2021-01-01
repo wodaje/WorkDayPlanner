@@ -1,12 +1,30 @@
-**Upgrade Options:**
-1. Input field for memos could be made to expand futher for full desktop view.
+Project update Jeff Woda 03 Dec 2020
+(203) 482-7693 jeff@wodahouse.com
+
+*** Title: Work Day Planner Homework ***
+
+Link:
+https://wodaje.github.io/WorkDayPlanner/
 
 
-***Project update Jeff Woda 03 Dec 2020 - updated files:***
-
+Technologies used:
 1. JavaScript using Jquery mainly
 2. CSS properties and classes 
 
+
+Description:
+9-5 day planner with hourly fields for subjects/activities etc. The application checks and displays the time continously and formats the appropriate hourly fields to past, present, and future formats for the user to easily identify.
+
+
+Screenshot:
+https://github.com/wodaje/WorkDayPlanner/blob/main/image001.png
+
+
+License:
+None
+
+
+Detail Section:
 Functionality Fix:
 1. Lines 68 to 72 check for the hour window and adjust so that one can view the file 24/7 to check for functionality - note the actual time window will only be accurate during a 9-5 viewing - otherwise it has an 8 hour offset to keep the screen changes releveant. (this is repeated now in new function update checkTime)
 
